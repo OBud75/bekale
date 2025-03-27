@@ -38,3 +38,6 @@ class Comparable {
 bool are_equals(Comparable *obj1, Comparable *obj2) {
     return obj1->get_compare_value() == obj2->get_compare_value();
 };
+
+
+// Il y avait un exercice en C++ avec une classe User et une classe Password
