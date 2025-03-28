@@ -33,3 +33,6 @@ int main() {
     auto &shared_person_2 = shared_person;
     Person *toto = make_person();
 }
+// A vous d'utiliser tout ca dans des cas concrets.
+// pointeurs uniques vs new rejoint les concepts
+// d'object lifetime et d'ownership en rust.

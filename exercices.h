@@ -53,6 +53,11 @@ int is_in_array(void *obj_to_find, void *array, int nb_of_elems_in_array, size_t
         }
     }
     return 0;
+    // On peut itérer directement sur les objets de l'array (se rapproche de la logique foreach de js, for obj in objs en python etc):
+    // for (char *ptr = array; ptr < (char *)array + nb_of_elems_in_array * elem_size; ptr += elem_size) {
+    //   if (compare_fnc(obj_to_find, ptr)) {
+    //     return 1;
+    //   }
 }
 
 int main() {
@@ -62,6 +67,7 @@ int main() {
     Book book1 = {100};
     Book books[] = {{50}, {100}};
 
+    // std::cout c'est en C++
     std::cout << "Are persons equal: " << are_equals(&person1, &person2, (int (*)(void *, void *))are_persons_equals) << std::endl;
     std::cout << "Is person1 in array: " << is_in_array(&person1, people, 2, sizeof(Person), (int (*)(void *, void *))are_persons_equals) << std::endl;
     std::cout << "Is book1 in array: " << is_in_array(&book1, books, 2, sizeof(Book), (int (*)(void *, void *))are_books_equals) << std::endl;
